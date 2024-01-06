@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" 
+    integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Registration Page</title>
+</head>
+<body>
+    <u><h1 style="text-align: center;color:green">Register</h1></u><br/>
+  <ul>
+    <% if(typeof errors != 'undefined'){ %>
+        <% errors.forEach(error=>{ %>
+        <li>
+            <%= error.message %></li>
+            <% }) %> <% } %>      
+  </ul>
+  <div style="width: 500px;text-align: center;border:1px solid black;
+   justify-content: center;margin-left: 400px;border-radius: 30px;background-color: burlywood;"><br/>
+    <form style="width: 500px;text-align: center;justify-content: center;" action="/users/register" method="POST">
+        <div>
+            <input type="text" id="id" name="id" placeholder="ID" required/>
+        </div><br/>
+        <div>
+            <input type="password" id="pwd" name="pwd" placeholder="Password" required/>
+        </div><br/>
+        <div>
+            <input type="password" id="confirmpwd" name="confirmpwd" placeholder="Confirm Password" required/>
+        </div><br/>
+        <div>
+            <input style="background-color: green;color: white;" type="submit" value="Register"/>
+        </div><br/>
+        Already Registered?<a href="/users/login"> Login Here</a><br/>
+    </form><br/>
+</div>
+</body>
+</html>
